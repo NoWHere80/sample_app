@@ -60,6 +60,7 @@ module SampleApp
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
+    #TW True means: Asset folder is used ( => asset pipline) so that css files are found
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
