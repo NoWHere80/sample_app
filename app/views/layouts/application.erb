@@ -1,17 +1,50 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+  <!--&lt;!&ndash;@title is the title variable&ndash;&gt;-->
+  <!--&lt;!&ndash;<title>Ruby on Rails Tutorial Sample App | <%= @title %></title>&ndash;&gt;-->
+  <!--&lt;!&ndash;title is helper function &ndash;&gt;-->
+  <!--<title><%= title %></title>-->
+  <!--<%= csrf_meta_tag %>-->
+  <!--<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>-->
+  <!--<%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>-->
+<!--</head>-->
+
+<!--<body>-->
+    <!--<%= yield %>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <!--@title is the title variable-->
-  <!--<title>Ruby on Rails Tutorial Sample App | <%= @title %></title>-->
-  <!--title is helper function -->
-  <title><%= title %></title>
-  <%= csrf_meta_tag %>
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
-
 <body>
-    <%= yield %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "sample app", '#', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Home",    '#' %></li>
+          <li><%= link_to "Help",    '#' %></li>
+          <li><%= link_to "Sign in", '#' %></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <%= yield %>
+</div>
 </body>
-
 </html>
