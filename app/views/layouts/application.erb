@@ -1,26 +1,10 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-  <!--&lt;!&ndash;@title is the title variable&ndash;&gt;-->
-  <!--&lt;!&ndash;<title>Ruby on Rails Tutorial Sample App | <%= @title %></title>&ndash;&gt;-->
-  <!--&lt;!&ndash;title is helper function &ndash;&gt;-->
-  <!--<title><%= title %></title>-->
-  <!--<%= csrf_meta_tag %>-->
-  <!--<%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>-->
-  <!--<%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>-->
-<!--</head>-->
 
-<!--<body>-->
-    <!--<%= yield %>-->
-<!--</body>-->
-
-<!--</html>-->
 
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= full_title(yield(:title)) %></title>
+
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -32,7 +16,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "sample app", '#', id: "logo" %>
+      <header>
+        <%= image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+      </header>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home",    '#' %></li>
