@@ -1,4 +1,7 @@
 SampleApp::Application.routes.draw do
+  #allows REST access for localhost:3000/users/1 and create, show, index, new, edit, update, destroy
+  resources :users
+
   get "users/new"
 
   #get "pages/home"

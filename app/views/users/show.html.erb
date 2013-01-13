@@ -1,0 +1,12 @@
+<% provide(:title, @user.name) %>
+<!--row and span4 are part of bootstrap-->
+<div class="row">
+  <aside class="span4">
+    <h1>
+      <section>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+    </h1>
+    </section>
+  </aside>
+</div>
