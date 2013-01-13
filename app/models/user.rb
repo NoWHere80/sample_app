@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
 
   #not all db support casesensitive indexs
   #index also fixes an efficiency prob with find_by_email
-  before_save { |user| user.email = email.downcase }
+  #before_save { |user| user.email = email.downcase }
+  before_save { self.email.downcase! }
 
   validates :name, presence:  true, length: { maximum: 50 }
 
