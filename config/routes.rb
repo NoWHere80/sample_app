@@ -1,9 +1,8 @@
 SampleApp::Application.routes.draw do
   #allows REST access for localhost:3000/users/1 and create, show, index, new, edit, update, destroy
   resources :users
-
-  get "users/new"
-
+  resources :sessions, only: [:new, :create, :destroy]
+  #get "users/new"
   #get "pages/home"
   #get "pages/help"
   #get "pages/about"
@@ -18,7 +17,8 @@ SampleApp::Application.routes.draw do
   match '/about',   to: 'pages#about'
   match '/contact', to: 'pages#contact'
   match '/signup',  to: 'users#new'
-
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
